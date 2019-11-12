@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <form [formGroup]="userForm" (submit)="onSubmit($event)" action="" novalidate autocomplete="off">
+                <div class="field">
+                    <div class="control">
+                        <input formControlName="name" class="input"
+                            [class.is-danger]="userForm.controls.name.invalid && userForm.controls.name.touched"
+                            type="text" placeholder="Nombre" />
+                        <p class="help is-danger" *ngIf="userForm.controls.name.invalid && userForm.controls.name.touched">
+                            El nombre es requerido, debe contener al menos 6 caracteres
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea formControlName="lastname"
+                            [class.is-danger]="userForm.controls.lastname.invalid && userForm.controls.detail.touched"
+                            class="textarea" type="text" placeholder="Ingresar apellido"></textarea>
+                        <p class="help is-danger" *ngIf="userForm.controls.lastname.invalid && userForm.controls.lastname.touched">
+                            El apellido es requerido
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea formControlName="email"
+                            [class.is-danger]="userForm.controls.email.invalid && userForm.controls.email.touched"
+                            class="textarea" type="text" placeholder="Ingresar email"></textarea>
+                        <p class="help is-danger" *ngIf="userForm.controls.email.invalid && userForm.controls.email.touched">
+                            El email es requerido
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input formControlName="phone"
+                            [class.is-danger]="userForm.controls.phone.invalid && userForm.controls.phone.touched"
+                            class="input" type="text" placeholder="Phone: ej. 956030444" />
+                        <p class="help is-danger" *ngIf="userForm.controls.phone.invalid && userForm.controls.phone.touched">
+                            El telefono es requerido, debe ser numérico y contener 9 digitos.
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input formControlName="age"
+                            [class.is-danger]="userForm.controls.age.invalid && userForm.controls.age.touched"
+                            class="input" type="text" placeholder="Edad: ej. 20" />
+                        <p class="help is-danger" *ngIf="userForm.controls.age.invalid && userForm.controls.age.touched">
+                            La edad es requerida, debe ser númerico y mayor a 0
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea formControlName="role"
+                            [class.is-danger]="userForm.controls.role.invalid && userForm.controls.role.touched"
+                            class="textarea" type="text" placeholder="Ingresar rol"></textarea>
+                        <p class="help is-danger" *ngIf="userForm.controls.role.invalid && userForm.controls.role.touched">
+                            El rol es requerido
+                        </p>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button type="button" class="button" (click)="onBack()">Regresar</button>
+                    </p>
+                    <p class="control">
+                        <button type="submit" class="button is-dark" [disabled]="userForm.invalid">Guardar</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

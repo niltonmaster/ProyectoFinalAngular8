@@ -1,0 +1,6 @@
+<div class="columns">
+    <div class="column is-10 is-offset-1" *ngIf="user">
+        <h2 class="subtitle is-3 has-text-centered">Actualizar Usuario</h2>
+        <app-user-form [model]="user" (completedform)="onUpdate($event)"></app-user-form>
+    </div>
+</div>

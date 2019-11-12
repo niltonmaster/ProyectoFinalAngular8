@@ -1,0 +1,40 @@
+<div class="columns is-centered">
+    <div class="column is-5-desktop is-7-tablet is-12-mobile">
+        <div class="level">
+            <div class="level-item">
+                <img src="/assets/images/angular-logo.svg" width="72" height="55">
+                <span class="subtitle is-3">dmin</span>
+            </div>
+        </div>
+        <form action="" novalidate autocomplete="off" #loginForm="ngForm">
+            <div class="field">
+                <label class="label">User</label>
+                <div class="control">
+                    <input name="email" class="input" type="text" [class.is-danger]="email.touched && email.invalid"
+                        #email="ngModel" required email [(ngModel)]="model.email" />
+                    <p class="help is-danger" *ngIf="email.touched && email.invalid">
+                        El user es requerido, debe ser un correo válido
+                    </p>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input name="password" class="input" type="password" [class.is-danger]="password.touched && password.invalid"
+                        #password="ngModel" required minlength="8" [(ngModel)]="model.password"/>
+                    <p class="help is-danger" *ngIf="password.touched && password.invalid">
+                        La contraseña es requerida, debe contener al menos 8 caracteres
+                    </p>
+                </div>
+            </div>
+            <div class=" field has-text-centered ">
+                <p class="help is-danger" *ngIf="error">
+                    {{ error }}
+                </p>
+                <button type="button" [disabled]="loginForm.invalid"
+                    [class.is-loading]="isLoading" (click)="onClick($event)" class="button is-dark" style="margin-top: 10px; ">Ingresar</button>
+            </div>
+        </form>
+    </div>
+</div>

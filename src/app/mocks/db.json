@@ -1,0 +1,31 @@
+{
+  "administrador": [
+    {
+      "id": 1,
+      "name": "Nilton",
+      "surname": "Pérez",
+      "email": "niltonperez19@gmail.com",
+      "password": "elm3j0r$2906"
+    }
+  ],
+  "users": [
+    {
+      "name": "Renato",
+      "lastname": "Estabridis",
+      "email": "renato.estabridis@gmail.com",
+      "phone": 981623712,
+      "age": 22,
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "Carlos",
+      "lastname": "Perez",
+      "email": "carlitos123@gmail.com",
+      "phone": 987281312,
+      "age": 20,
+      "role": "operario",
+      "id": 2
+    }
+  ]
+}
